@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath(
+                'org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE'
+        )
+    }
+}
+
+dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter-thymeleaf',
+    )
+// https://mvnrepository.com/artifact/org.rxtx/rxtx
+    compile group: 'org.rxtx', name: 'rxtx', version: '2.1.7'
+}
+
